@@ -62,11 +62,6 @@ local InterfaceManager = {} do
 
         InterfaceManager:LoadSettings()
 
-		tab:AddParagraph({
-            Title = "Credits",
-            Content = "Scripting: R3THdev\nInterface: dawid"
-        })
-
 		local section = tab:AddSection("Interface")
 
 		local InterfaceTheme = section:AddDropdown("InterfaceTheme", {
