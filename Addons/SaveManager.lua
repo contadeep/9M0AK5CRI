@@ -1,7 +1,7 @@
 local HttpService = game:GetService("HttpService")
 
 local SaveManager = {} do
-	SaveManager.Folder = "R3TH PRIV"
+	SaveManager.Folder = "FluentSettings"
 	SaveManager.Ignore = {}
 	SaveManager.Parser = {
 		Toggle = {
@@ -185,7 +185,7 @@ local SaveManager = {} do
 			local success, err = self:Load(name)
 			if not success then
 				return self.Library:Notify({
-					Title = "R3TH PRIV",
+					Title = "Interface",
 					Content = "Configuration Loader",
 					SubContent = "Failed to load the autoload configuration: " .. err,
 					Duration = 7
@@ -193,7 +193,7 @@ local SaveManager = {} do
 			end
 
 			self.Library:Notify({
-				Title = "R3TH PRIV",
+				Title = "Interface",
 				Content = "Configuration Loader",
 				SubContent = string.format("Successfully auto-loaded: %q", name),
 				Duration = 7
@@ -216,7 +216,7 @@ local SaveManager = {} do
 
                 if name:gsub(" ", "") == "" then 
                     return self.Library:Notify({
-						Title = "R3TH PRIV",
+						Title = "Interface",
 						Content = "Configuration Loader",
 						SubContent = "The configuration cannot have an empty name.",
 						Duration = 7
@@ -226,7 +226,7 @@ local SaveManager = {} do
                 local success, err = self:Save(name)
                 if not success then
                     return self.Library:Notify({
-						Title = "R3TH PRIV",
+						Title = "Interface",
 						Content = "Configuration Loader",
 						SubContent = "Failed to save configuration: " .. err,
 						Duration = 7
@@ -234,7 +234,7 @@ local SaveManager = {} do
                 end
 
 				self.Library:Notify({
-					Title = "R3TH PRIV",
+					Title = "Interface",
 					Content = "Configuration Loader",
 					SubContent = string.format("Successfully created: %q", name),
 					Duration = 7
@@ -251,7 +251,7 @@ local SaveManager = {} do
 			local success, err = self:Load(name)
 			if not success then
 				return self.Library:Notify({
-					Title = "R3TH PRIV",
+					Title = "Interface",
 					Content = "Configuration Loader",
 					SubContent = "Failed to load configuration: " .. err,
 					Duration = 7
@@ -259,7 +259,7 @@ local SaveManager = {} do
 			end
 
 			self.Library:Notify({
-				Title = "R3TH PRIV",
+				Title = "Interface",
 				Content = "Configuration Loader",
 				SubContent = string.format("Successfully loaded: %q", name),
 				Duration = 7
@@ -272,7 +272,7 @@ local SaveManager = {} do
 			local success, err = self:Save(name)
 			if not success then
 				return self.Library:Notify({
-					Title = "R3TH PRIV",
+					Title = "Interface",
 					Content = "Configuration Loader",
 					SubContent = "Failed to overwrite configuration: " .. err,
 					Duration = 7
@@ -280,7 +280,7 @@ local SaveManager = {} do
 			end
 
 			self.Library:Notify({
-				Title = "R3TH PRIV",
+				Title = "Interface",
 				Content = "Configuration Loader",
 				SubContent = string.format("Successfully overwrote: %q", name),
 				Duration = 7
@@ -291,7 +291,7 @@ local SaveManager = {} do
         	local name = SaveManager.Options.SaveManager_ConfigList.Value
         	if not name then
         		return self.Library:Notify({
-        			Title = "R3TH PRIV",
+        			Title = "Interface",
         			Content = "Configuration Loader",
         			SubContent = "No configuration selected to delete.",
         			Duration = 7
@@ -303,7 +303,7 @@ local SaveManager = {} do
         		delfile(file)
         
         		self.Library:Notify({
-        			Title = "R3TH PRIV",
+        			Title = "Interface",
         			Content = "Configuration Loader",
         			SubContent = string.format("Successfully deleted: %q", name),
         			Duration = 7
@@ -317,7 +317,7 @@ local SaveManager = {} do
         		end
         	else
         		self.Library:Notify({
-        			Title = "R3TH PRIV",
+        			Title = "Interface",
         			Content = "Configuration Loader",
         			SubContent = "Configuration file not found.",
         			Duration = 7
@@ -336,7 +336,7 @@ local SaveManager = {} do
 			writefile(self.Folder .. "/settings/autoload.txt", name)
 			AutoloadButton:SetDesc("Current autoload configuration: " .. name)
 			self.Library:Notify({
-				Title = "R3TH PRIV",
+				Title = "Interface",
 				Content = "Configuration Loader",
 				SubContent = string.format("Set %q to automatically load.", name),
 				Duration = 7
