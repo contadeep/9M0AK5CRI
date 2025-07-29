@@ -28,16 +28,12 @@ do
         Duration = 5 -- Set to nil to make the notification not disappear
     })
 
-
-
     local Paragraph = Tabs.Main:AddParagraph({
         Title = "Paragraph",
         Content = "This is a paragraph.\nSecond line!"
     })
 
     Paragraph:SetDesc("This is a updated paragraph.\nSecond line!")
-
-
 
     Tabs.Main:AddButton({
         Title = "Button",
@@ -64,8 +60,6 @@ do
         end
     })
 
-
-
     local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
 
     Toggle:OnChanged(function()
@@ -74,8 +68,6 @@ do
 
     Options.MyToggle:SetValue(false)
 
-
-    
     local Slider = Tabs.Main:AddSlider("Slider", {
         Title = "Slider",
         Description = "This is a slider",
@@ -94,8 +86,6 @@ do
 
     Slider:SetValue(3)
 
-
-
     local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
         Title = "Dropdown",
         Values = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen"},
@@ -108,8 +98,6 @@ do
     Dropdown:OnChanged(function(Value)
         print("Dropdown changed:", Value)
     end)
-
-
     
     local MultiDropdown = Tabs.Main:AddDropdown("MultiDropdown", {
         Title = "Dropdown",
@@ -133,8 +121,6 @@ do
         print("Mutlidropdown changed:", table.concat(Values, ", "))
     end)
 
-
-
     local Colorpicker = Tabs.Main:AddColorpicker("Colorpicker", {
         Title = "Colorpicker",
         Default = Color3.fromRGB(96, 205, 255)
@@ -145,8 +131,6 @@ do
     end)
     
     Colorpicker:SetValueRGB(Color3.fromRGB(0, 255, 140))
-
-
 
     local TColorpicker = Tabs.Main:AddColorpicker("TransparencyColorpicker", {
         Title = "Colorpicker",
@@ -161,8 +145,6 @@ do
             "Transparency:", TColorpicker.Transparency
         )
     end)
-
-
 
     local Keybind = Tabs.Main:AddKeybind("Keybind", {
         Title = "KeyBind",
@@ -206,7 +188,6 @@ do
 
     Keybind:SetValue("MB2", "Toggle") -- Sets keybind to MB2, mode to Hold
 
-
     local Input = Tabs.Main:AddInput("Input", {
         Title = "Input",
         Default = "Default",
@@ -222,7 +203,6 @@ do
         print("Input updated:", Input.Value)
     end)
 end
-
 
 -- Addons:
 -- SaveManager (Allows you to have a configuration system)
@@ -247,7 +227,6 @@ SaveManager:SetFolder("FluentScriptHub/specific-game")
 
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
-
 
 Window:SelectTab(1)
 
